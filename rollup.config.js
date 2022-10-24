@@ -12,7 +12,6 @@ export default {
     name: "Heex",
     format: "esm",
     sourcemap: true,
-    exports: "named",
     globals: {
       react: "React",
     },
