@@ -4,9 +4,7 @@
   "type": "module",
   "main": "dist/index.js",
   "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    },
+    ".": "./dist/index.js",
     "./index.css": "./dist/index.css"
   },
   "files": [
