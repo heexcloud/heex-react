@@ -1,15 +1,22 @@
 {
   "name": "@heex/react",
   "version": "1.0.0",
+  "type": "module",
   "main": "dist/index.js",
   "exports": {
     ".": {
       "import": "./dist/index.js"
-    }
+    },
+    "./index.css": "./dist/index.css"
   },
+  "files": [
+    "package.json",
+    "yarn.lock",
+    "dist"
+  ],
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production rollup -c --bundleConfigAsCjs",
+    "build": "NODE_ENV=production rollup -c",
     "watch": "NODE_ENV=development rollup -c -w"
   },
   "peerDependencies": {
