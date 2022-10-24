@@ -36,10 +36,10 @@ export default {
       include: /node_modules/,
     }),
     babel({
-      babelHelpers: "bundled",
+      babelHelpers: "runtime",
+      exclude: /node_modules/,
       presets: ["@babel/preset-env", "@babel/preset-react"],
-      extensions: [".js", ".jsx"],
-      include: ["**/*.js", "**/*.jsx"],
+      plugins: ["@babel/plugin-transform-runtime"],
     }),
   ],
 };
