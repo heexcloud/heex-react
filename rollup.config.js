@@ -10,14 +10,14 @@ export default {
   output: {
     file: "dist/index.js",
     name: "Heex",
-    format: "umd",
+    format: "esm",
     sourcemap: true,
     exports: "auto",
     globals: {
       react: "React",
     },
   },
-  external: ["react"],
+  external: ["react", /@babel\/runtime/],
   plugins: [
     json(),
     replace({
