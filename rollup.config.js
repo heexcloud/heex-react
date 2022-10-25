@@ -4,6 +4,8 @@ import commonjs from "@rollup/plugin-commonjs";
 import scss from "rollup-plugin-scss";
 import json from "@rollup/plugin-json";
 import replace from "@rollup/plugin-replace";
+import bundleSize from "rollup-plugin-bundle-size";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default {
   input: "src/index.js",
@@ -40,5 +42,7 @@ export default {
       presets: ["@babel/preset-env", "@babel/preset-react"],
       plugins: ["@babel/plugin-transform-runtime"],
     }),
+    bundleSize(),
+    visualizer(),
   ],
 };

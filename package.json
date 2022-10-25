@@ -31,7 +31,9 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.1",
     "rollup": "^3.2.3",
+    "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-visualizer": "^5.8.3",
     "sass": "^1.55.0"
   },
   "dependencies": {
