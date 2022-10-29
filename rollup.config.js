@@ -1,7 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
-import scss from "rollup-plugin-scss";
 import json from "@rollup/plugin-json";
 import replace from "@rollup/plugin-replace";
 import bundleSize from "rollup-plugin-bundle-size";
@@ -26,9 +25,6 @@ export default {
         "process.env.NODE_ENV": '"production"',
       },
       preventAssignment: true,
-    }),
-    scss({
-      outputStyle: "compressed",
     }),
     resolve({
       extensions: [".js", ".jsx"],

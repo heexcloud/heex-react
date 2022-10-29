@@ -14,8 +14,13 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "build": "NODE_ENV=production rollup -c",
-    "watch": "NODE_ENV=development rollup -c -w"
+    "prebuild": "rm -rf dist",
+    "build-js": "NODE_ENV=production rollup -c",
+    "build-css": "sass ./src/heex.scss ./dist/index.css --style compressed --no-source-map",
+    "build": "concurrently \"yarn:build-js\" \"yarn:build-css\"",
+    "watch-js": "NODE_ENV=development rollup -c -w",
+    "watch-css": "sass --watch ./src/heex.scss ./dist/index.css --no-source-map",
+    "watch": "concurrently \"yarn:watch-js\" \"yarn:watch-css\""
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
@@ -30,9 +35,9 @@
     "@rollup/plugin-json": "^5.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.1",
+    "concurrently": "^7.5.0",
     "rollup": "^3.2.3",
     "rollup-plugin-bundle-size": "^1.0.3",
-    "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-visualizer": "^5.8.3",
     "sass": "^1.55.0"
   },
