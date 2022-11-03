@@ -46,7 +46,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.19.4",
-    "react-icons": "^4.6.0"
+    "react-icons": "^4.6.0",
+    "use-debounce": "^8.0.4"
   },
   "publishConfig": {
     "access": "public"
