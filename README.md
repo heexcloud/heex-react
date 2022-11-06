@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+[![](https://img.shields.io/npm/dw/@heex/react?label=NPM%20downloads&style=flat-square)](https://www.npmjs.com/package/@heex/react)
+
 #### Installation
 
 ```sh
