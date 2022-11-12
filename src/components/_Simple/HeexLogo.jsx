@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { debounce } from "../../utils";
 
 export const HeexLogo = () => {
-    const [width, setWidth] = useState(window?.innerWidth);
+    const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        const onResize = debounce(() => setWidth(window?.innerWidth), 100);
+        const onResize = () => setWidth(window.innerWidth);
 
-        addEventListener("resize", onResize);
+        window.addEventListener("resize", onResize);
 
         return () => {
-            removeEventListener("resize", onResize);
+            window.removeEventListener("resize", onResize);
         };
     }, []);
 

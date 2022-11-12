@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.19.4",
+    "ahooks": "^3.7.2",
     "react-icons": "^4.6.0",
     "use-debounce": "^8.0.4"
   },
