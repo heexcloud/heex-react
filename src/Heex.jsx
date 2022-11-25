@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import { CommentEditor, CommentList, CommentMeta } from "./components";
 import { HeexContextProvider } from "./context";
 import { fetchAnonymousToken } from "./utils/query";
+import { validate, HeexOptionsCenter } from "./utils";
 
-export const Heex = ({ options }) => {
+export const Heex = ({ options, pageId }) => {
     if (typeof window !== "undefined") {
-        window.HeexOptions = options;
+        validate.options(options);
+        HeexOptionsCenter.assignHeexOptions(options);
     }
 
     useEffect(() => {
@@ -16,7 +18,7 @@ export const Heex = ({ options }) => {
 
     return (
         <div className="heex-container">
-            <HeexContextProvider>
+            <HeexContextProvider pageId={pageId}>
                 <CommentEditor isTopLevel />
                 <CommentMeta />
                 <CommentList />
